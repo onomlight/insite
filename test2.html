@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>空き家PLUS</title>
+<style>
+@import
+  url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root {
+  --main-color: #d3ad7f;
+  --bg: #010103;
+  --border: .1rem solid rgba(255, 255, 255, .3);
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: .8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 5rem;
+}
+
+body {
+  background: white;
+}
+
+section {
+  padding: 3rem 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.heading {
+  text-align: center;
+  color: black;
+  text-transform: uppercase;
+  padding-bottom: 3.5rem;
+  font-size: 4rem;
+}
+
+.heading span {
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: var(--border);
+  background: #A19882;
+}
+
+.header .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.header .logo img {
+  height: 5rem;
+}
+
+.header .navbar a {
+  margin: 0 1rem;
+  font-size: 1.8rem;
+  color: black;
+}
+
+.header .navbar a:hover {
+  color: black;
+  border-bottom: .1rem solid var(- -main-color);
+  padding-bottom: .5rem;
+}
+
+.header .icons div {
+  color: #fff;
+  cursor: pointer;
+  font-size: 2.5rem;
+  margin-left: 2rem;
+}
+
+.header .icons div:hover {
+  color: var(- -main-color);
+}
+
+#menu-btn {
+  display: none;
+}
+
+
+
+
+/*counting box*/
+/*about us*/
+
+
+@keyframes slide {from { left:-100px;
+  opacity: 0;
+}
+
+to {
+  left: 400px;
+  opacity: 1;
+}
+
+}
+@keyframes disappear {
+  from { left:400px;
+    opacity: 1;
+  }
+
+  to {
+    left: -100px;
+    opacity: 0;
+  }
+
+}
+
+
+
+/*국기 버튼*/
+.btn_lang {
+ 
+  margin-top: 1rem;
+  display: inline-block;
+  font-size: 1.7rem;
+  color: #fff;
+  background: var(- -main-color);
+  cursor: pointer;
+  width: 50px;
+  box-sizing: border-box;
+  border-radius: 100%;
+  margin: 0;
+ 
+ 
+}
+
+.btn_lang img {
+  width: 100%;
+  display: block;
+}
+
+/*services*/
+/**/
+.we .row {
+  display: flex;
+  align-items: center;
+  background: var(- -black);
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.we .row .image {
+  flex: 1 1 45rem;
+}
+
+.we .row .image img {
+  width: 100%;
+}
+
+.we .row .content {
+  flex: 1 1 45rem;
+  padding: 2rem;
+}
+
+.we .row .content h3 {
+  font-size: 3rem;
+  color: black;
+}
+
+.we .row .content p {
+  font-size: 1.6rem;
+  color: black;
+  padding: 1rem 0;
+  line-height: 1.8;
+}
+
+/*services*/
+.footer {
+  /* background:var(--black); */
+  text-align: center;
+}
+
+.footer .share {
+  padding: 1rem 0;
+}
+
+.footer .share a {
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  color: black;
+  border: var(- -border);
+  margin: .3rem;
+  border-radius: 50%;
+}
+
+
+
+
+.footer .credit {
+  font-size: 2rem;
+  color: black;
+  font-weight: lighter;
+  padding: 1.5rem;
+}
+
+.footer .credit span {
+  color: black;
+}
+
+
+
+/* media queries  */
+@media ( max-width :991px) {
+  html {
+    font-size: 55%;
+  }
+  .header {
+    padding: 1.5rem 2rem;
+  }
+  section {
+    padding: 2rem;
+  }
+}
+
+@media ( max-width :768px) {
+  #menu-btn {
+    display: inline-block;
+  }
+  .header .navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background: #fff;
+    width: 30rem;
+    height: calc(100vh - 9.5rem);
+  }
+  .header .navbar.active {
+    right: 0;
+  }
+  .header .navbar a {
+    color: var(- -black);
+    display: block;
+    margin: 1.5rem;
+    padding: .5rem;
+    font-size: 2rem;
+  }
+  .home {
+    background-position: left;
+    justify-content: center;
+    text-align: center;
+  }
+  .home .content h3 {
+    font-size: 4.5rem;
+  }
+  .home .content p {
+    font-size: 1.5rem;
+  }
+  th{
+    width: 50%;
+  }
+}
+
+@media ( max-width :450px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+
+/*버튼 스티키-제작소개*/
+
+
+/*다크모드*/
+.btn_dark {
+  text-align: center;
+  line-height: 40px;
+  font-size: 1.6em;
+  border-radius: 40px;
+  background: #2f2f2f;
+  color: white;
+  letter-spacing: 0.15em;
+  transition: 0.5s;
+  right: 3%;
+  bottom: 5%;
+  position: fixed;
+  height: 40px;
+  width: 150px;
+  z-index: 100;
+}
+
+.btn_dark:hover {
+  color: #fff;
+}
+
+/*표 디자인*/
+table.type07 {
+  border-collapse: collapse;
+  text-align: center;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  margin: 90px 10px;
+  margin-top:160px;
+  margin-left:10%;
+  position: relative;
+  width: 20%;
+  font-size: 2rem;
+
+ 
+}
+table.type07 thead {
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  background:#A19882;
+}
+table.type07 thead th {
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  color: #fff;
+  border: #010103;
+
+}
+table.type07 tbody th {
+  width: 300px;
+  padding: 60px;
+  font-weight: bold;
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+  background: #E6DDC6;
+  font-size: 2.5rem;
+}
+table.type07 td {
+  width: 350px;
+  padding: 110px;
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+  border-left:2px solid #ccc;
+}
+/* 테이블 CSS 정리 */
+
+#title {
+    font-size: 30em;
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
+   
+  }
+  /*반응형 선택창*/
+  .select-btn{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.select-btn .btn-text{
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    width:140px;
+}
+.select-btn .arrow-dwn{
+    display: flex;
+    height: 21px;
+    width: 21px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 50%;
+    background: #6e93f7;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.select-btn.open .arrow-dwn{
+    transform: rotate(-180deg);
+}
+.list-items{
+    position: relative;
+    margin-top: 15px;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+.select-btn.open ~ .list-items{
+    display: block;
+}
+.list-items .item{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0 15px;
+    border-radius: 8px;
+}
+.list-items .item:hover{
+    background-color: #e7edfe;
+}
+.item .item-text{
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+.item .checkbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    margin-right: 12px;
+    border: 1.5px solid #c0c0c0;
+    transition: all 0.3s ease-in-out;
+}
+.item.checked .checkbox{
+    background-color: #4070f4;
+    border-color: #4070f4;
+}
+.checkbox .check-icon{
+    color: #fff;
+    font-size: 11px;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+}
+.item.checked .check-icon{
+    transform: scale(1);
+}
+</style>
+<!-- font awesome cdn link  -->
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+
+
+  <!-- 우하단 고정 버튼 -->
+ 
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <a href="#" class="btn_dark">ダークモード</a>
+  </div>
+
+  <!-- header  -->
+  <header class="header">
+    <section class="flex">
+      <a href="/" class="logo"> <img src="AKiyaLogo.png" alt="">
+      </a>
+      <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#projects">projects</a>
+        <a href="#services">services</a>
+        <a href="findHomeBuy">buy</a>
+      </nav>
+      <nav>
+
+       
+          <button type="button" class="btn_lang" id="img_btn">
+            <img src="flag_jp.png">
+          </button>
+          <button type="button" class="btn_lang" id="img_btn">
+            <img src="flag_Ko.png">
+          </button>
+          <button type="button" class="btn_lang" id="img_btn">
+            <img src="flag_cn.png">
+          </button>
+        </div>
+
+
+      </nav>
+
+      <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+      </div>
+  </header>
+ 
+  <table class="type07">
+    <thead>
+   
+      <th>매매</th>
+   
+    </thead>
+    <tbody>
+    <tr>
+      <th>지 역</th>
+      <th>구 조</th>
+      <th>가 격</th>
+      <th>조 건</th>
+    </tr>
+    <tr>
+      <td>
+        <div class="container">
+          <div class="select-btn">
+              <span class="btn-text">Select Language</span>
+              <span class="arrow-dwn">
+                  <i class="fa-solid fa-chevron-down"></i>
+              </span>
+          </div>
+          <ul class="list-items">
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">HTML & CSS</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">Bootstrap</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">JavaScript</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">Node.Js</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">React JS</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">Mango DB</span>
+              </li>
+          </ul>
+      </div>
+      </td>
+      <td>
+        <div class="container">
+          <div class="select-btn">
+              <span class="btn-text">Select Language</span>
+              <span class="arrow-dwn">
+                  <i class="fa-solid fa-chevron-down"></i>
+              </span>
+          </div>
+          <ul class="list-items">
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">HTML & CSS</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">Bootstrap</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">JavaScript</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">Node.Js</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">React JS</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">Mango DB</span>
+              </li>
+          </ul>
+      </div>
+      </td>
+      <td>
+        <div class="container">
+          <div class="select-btn">
+              <span class="btn-text">Select Language</span>
+              <span class="arrow-dwn">
+                  <i class="fa-solid fa-chevron-down"></i>
+              </span>
+          </div>
+          <ul class="list-items">
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">HTML & CSS</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">Bootstrap</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">JavaScript</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">Node.Js</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">React JS</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">Mango DB</span>
+              </li>
+          </ul>
+      </div>
+      </td>
+      <td>
+        <div class="container">
+          <div class="select-btn">
+              <span class="btn-text">Select Language</span>
+              <span class="arrow-dwn">
+                  <i class="fa-solid fa-chevron-down"></i>
+              </span>
+          </div>
+          <ul class="list-items">
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">HTML & CSS</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">Bootstrap</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">JavaScript</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">Node.Js</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">React JS</span>
+              </li>
+              <li class="item">
+                  <span class="checkbox">
+                      <i class="fa-solid fa-check check-icon"></i>
+                  </span>
+                  <span class="item-text">Mango DB</span>
+              </li>
+          </ul>
+      </div>
+      </td>
+    </tr>
+   
+   
+    </tbody>
+  </table>
+  <!--지역 부분 자바스크립트-->
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+<script>
+  const selectBtn = document.querySelector(".select-btn"),
+  items = document.querySelectorAll(".item");
+selectBtn.addEventListener("click", () => {
+selectBtn.classList.toggle("open");
+});
+items.forEach(item => {
+item.addEventListener("click", () => {
+    item.classList.toggle("checked");
+    let checked = document.querySelectorAll(".checked"),
+        btnText = document.querySelector(".btn-text");
+        if(checked && checked.length > 0){
+            btnText.innerText = `${checked.length} Selected`;
+        }else{
+            btnText.innerText = "Select Language";
+        }
+});
+})
+</script>
+  <!--지역 부분 쿼리문-->
+  <!--구조 부분 쿼리문-->
+ 
+  <!--구조 부분 쿼리문-->
+
+        <!-- custom js file link  -->
+        <!--메인글씨 효과-->
+        <script>
+ let mainText = document.querySelector("h3")
+ window.addEventListener('scroll',function(){
+  let value =window.scrollY;
+  console.log(scrollY,value);
+
+  if(value>400){
+    mainText.style.animation ='disappear 1s ease-out forwards';
+  }else{
+    mainText.style.animation = 'slide 1s ease-out';
+  }
+ });
+ 
+</script>
+        <!--메인 글씨 나타났다 사라지는 효과-->
+        <script src="js/script.js"></script>
+        <!--nav상단 바 움직이는 효과-->
+        <script>
+  let navbar = document.querySelector('.navbar');
+
+document.querySelector('#menu-btn').onclick = () =>{
+    navbar.classList.toggle('active');
+    searchForm.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+
+let searchForm = document.querySelector('.search-form');
+
+document.querySelector('#search-btn').onclick = () =>{
+    searchForm.classList.toggle('active');
+    navbar.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+
+let cartItem = document.querySelector('.cart-items-container');
+
+document.querySelector('#cart-btn').onclick = () =>{
+    cartItem.classList.toggle('active');
+    navbar.classList.remove('active');
+    searchForm.classList.remove('active');
+}
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+    searchForm.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+</script>
+        <!--counting box-->
+        <!-- jquery file link  -->
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- magnific popup link  -->
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        <script>
+ 
+  $(document).ready(function(){
+
+$('.fa-bars').click(function(){
+  $(this).toggleClass('fa-times');
+  $('nav').toggleClass('nav-toggle');
+});
+
+$(window).on('scroll load',function(){
+  $('.fa-bars').removeClass('fa-times');
+  $('nav').removeClass('nav-toggle');
+});
+
+$('.count').each(function() {
+  var $this = $(this),
+      countTo = $this.attr('data-count');
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+  {
+    duration: 5000,
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum + '+');
+    }
+  });
+});
+
+});
+</script>
+</body>
+</html>
